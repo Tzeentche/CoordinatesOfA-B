@@ -1,0 +1,44 @@
+import java.util.*;
+
+/**
+ * Created by Хорус on 04.12.2018.
+ */
+public class MathematicsTwo {
+
+    public static void main (String[] args) {
+
+        int a[] = new int[4];
+        for (int i = 0; i <= a.length - 1; i++) {
+            Scanner in = new Scanner(System.in);
+
+            String b = null;
+            switch (i) {
+                case 0: b = "X1";
+                    break;
+                case 1: b = "Y1";
+                    break;
+                case 2: b = "X2";
+                    break;
+                case 3: b = "Y2";
+                    break;
+            }
+            try {
+                System.out.println("Enter coordinate by " + b);
+                a[i] = in.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong value " + b);
+                a[i] = 0;
+            }
+            if (a[i] < 0) {
+                a[i] = a[i] * -1;
+            }
+        }
+            if ((a[0] + a[1]) > (a[2] + a[3])) {
+                System.out.println("Point B is closer");
+            } else if ((a[0] + a[1]) < (a[2] + a[3]))  {
+                System.out.println("Point A is closer");
+            } else if ((a[0] + a[1]) == (a[2] + a[3])) {
+                System.out.println("Point A & B are the same");
+            }
+    }
+}
